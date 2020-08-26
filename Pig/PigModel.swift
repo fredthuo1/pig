@@ -4,6 +4,7 @@ import enum ObjectLibrary.Die
 
 protocol PigModelDelegate: class {
     // TODO: - Define a method to update the UI in the event of a roll here
+    func updateUI(die: String)
     func update(_ pointsRolled: Int)
     func updateScore(for player: Player)
     func willChange(player: Player)
@@ -61,28 +62,50 @@ final class PigModel {
             delegate?.updateScore(for: $0)
         }
         isPlayerTwosTurn = false
-        /**
-         // TODO: - Add text to update the game log which prompts the users that a new game has begun
-         -
-         */
-        let newGameText = ""
+        let newGameText = "Welcome to Pig: Player 1, It's your turn!"
+        let icon = "icon"
         delegate?.updateGameLog(text: newGameText)
-    }
+        delegate?.updateUI(die: icon)
+        delegate?.updateScore(for: currentPlayer)
+        }
     
     func roll() {
-        /**
-         // TODO: - Implement this method to perform a single die roll and process the outcome
-         -
-         // HINT: -
-         -
-         - Note that the `Die` enum contains a computed variable value that returns the `Int` value of a given case
-         - Note that the `Die` enum is `CaseIterable`, try using the instance method `randomElement()` on `Die.allCases`
-         to generate a value for a roll
-         - Perform the necessary checks pursuant to the `GamePlay Rules` & `Requirements` outlined in `README.md`
-         - Utilize the function you've implemented in `PigModelDelegate` to update the UI with the outcome of the roll
-         - Be sure to update the `pointsRolled` property, both within this model AND the UI
-         - Be sure to update the game log
-         */
+       
+        let number = Int.random(in: 0 ... 5) + 1
+        
+        if number == 1 {
+            delegate?.updateUI(die: "one")
+        } else if number == 2 {
+            delegate?.updateUI(die: "two")
+        } else if number == 3 {
+            delegate?.updateUI(die: "three")
+        } else if number == 4 {
+            delegate?.updateUI(die: "four")
+        } else if number == 5 {
+            delegate?.updateUI(die: "five")
+        } else if number == 6 {
+            delegate?.updateUI( die: "six")
+        } else if number == nil {
+            delegate?.updateUI( die: "icon")
+        }
+        
+        pointsRolled = number
+        delegate?.update(pointsRolled)
+        currentPlayer.updateScore(byAdding: pointsRolled)
+        delegate?.updateGameLog(text: "\(currentPlayer.name) rolled a \(pointsRolled)")
+        
+        delegate?.updateScore(for: currentPlayer)
+        
+        if currentPlayer.totalPoints >= 100 {
+            delegate?.notifyWinner(alerTitle: "Game Over!", message: "Player \(currentPlayer.name) is victorious! Press Ok to start a new game.", actionTitle: "Ok ")
+        }
+                    
+        if isPlayerTwosTurn == false {
+            isPlayerTwosTurn = true
+        } else {
+            isPlayerTwosTurn = false
+        }
+        
     }
     
     func hold() {
@@ -99,6 +122,23 @@ final class PigModel {
          - Try using the instance method `toggle()` on `isPlayerTwosTurn` to switch players
          - Be sure to update the game log
          */
+        
+        pointsRolled = 0
+        delegate?.update(pointsRolled)
+        currentPlayer.updateScore(byAdding: pointsRolled)
+        delegate?.updateGameLog(text: "\(currentPlayer.name) decided to hold!")
+        
+        if currentPlayer.totalPoints >= 100 {
+            delegate?.notifyWinner(alerTitle: "Game Over!", message: "(currentPlayer.name) is victorious! Press Ok to start a new game.", actionTitle: "Ok ")
+        }
+        
+        delegate?.updateScore(for: currentPlayer)
+
+        if isPlayerTwosTurn == false {
+            isPlayerTwosTurn = true
+        } else {
+            isPlayerTwosTurn = false
+        }
     }
     
     /**

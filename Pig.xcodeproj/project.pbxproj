@@ -16,9 +16,7 @@
 		D155591023AC223200444A58 /* PigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D155590F23AC223200444A58 /* PigModel.swift */; };
 		D155591323AC26DF00444A58 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = D155591223AC26DF00444A58 /* Die.swift */; };
 		D155591823AC289000444A58 /* swiftlint.sh in Resources */ = {isa = PBXBuildFile; fileRef = D155591723AC289000444A58 /* swiftlint.sh */; };
-		D1F31F1423AD2482002C39D7 /* Pig_Screenshots.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D1F31F1323AD2481002C39D7 /* Pig_Screenshots.pdf */; };
 		D1F31F1623AD258B002C39D7 /* todo.sh in Resources */ = {isa = PBXBuildFile; fileRef = D1F31F1523AD258B002C39D7 /* todo.sh */; };
-		D1F31F1923AD30E2002C39D7 /* Pig_Demo.mov in Resources */ = {isa = PBXBuildFile; fileRef = D1F31F1823AD30E2002C39D7 /* Pig_Demo.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +28,9 @@
 		D155590623AC20E800444A58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D155590823AC20E800444A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D155590F23AC223200444A58 /* PigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PigModel.swift; sourceTree = "<group>"; };
-		D155591123AC227D00444A58 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D155591223AC26DF00444A58 /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
 		D155591723AC289000444A58 /* swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = swiftlint.sh; sourceTree = "<group>"; };
-		D1F31F1323AD2481002C39D7 /* Pig_Screenshots.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Pig_Screenshots.pdf; sourceTree = "<group>"; };
 		D1F31F1523AD258B002C39D7 /* todo.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = todo.sh; sourceTree = "<group>"; };
-		D1F31F1823AD30E2002C39D7 /* Pig_Demo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Pig_Demo.mov; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +48,6 @@
 		D15558EE23AC20E400444A58 = {
 			isa = PBXGroup;
 			children = (
-				D155591123AC227D00444A58 /* README.md */,
-				D1F31F1323AD2481002C39D7 /* Pig_Screenshots.pdf */,
-				D1F31F1823AD30E2002C39D7 /* Pig_Demo.mov */,
 				D15558F923AC20E400444A58 /* Pig */,
 				D155591623AC282700444A58 /* Scripts */,
 				D15558F823AC20E400444A58 /* Products */,
@@ -168,12 +160,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1F31F1923AD30E2002C39D7 /* Pig_Demo.mov in Resources */,
 				D1F31F1623AD258B002C39D7 /* todo.sh in Resources */,
 				D155590723AC20E800444A58 /* LaunchScreen.storyboard in Resources */,
 				D155591823AC289000444A58 /* swiftlint.sh in Resources */,
 				D155590423AC20E800444A58 /* Assets.xcassets in Resources */,
-				D1F31F1423AD2482002C39D7 /* Pig_Screenshots.pdf in Resources */,
 				D155590223AC20E400444A58 /* Pig.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
